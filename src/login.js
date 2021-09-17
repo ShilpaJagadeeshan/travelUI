@@ -23,12 +23,20 @@ class LoginForm extends React.Component {
     });
   }
 
-
   validate(){
     let input = this.state.input;
     let errors = {};
     let isValid = true;
 
+    if (!input["username"]) {
+            isValid = false;
+            errors["username"] = "Please enter your username";
+        }
+
+    if (!input["password"]) {
+                isValid = false;
+                errors["password"] = "Please enter your password";
+        }
 
     if (typeof input["username"] !== "undefined") {
       const re = /^\S*$/;
@@ -81,7 +89,7 @@ class LoginForm extends React.Component {
                   onChange={this.handleChange}
                   class="form-control"
                   placeholder="Enter username"
-                  id="username" required/><br/>
+                  id="username" /><br/>
 
               <div className="input-error">{this.state.errors.username}</div><br/>
 
@@ -93,7 +101,7 @@ class LoginForm extends React.Component {
                   onChange={this.handleChange}
                   class="form-control"
                   placeholder="Enter password"
-                  id="password" required /><br/>
+                  id="password" /><br/>
 
              <div className="input-error">{this.state.errors.password}</div>
 

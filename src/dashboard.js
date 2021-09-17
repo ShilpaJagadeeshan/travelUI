@@ -2,67 +2,50 @@ import React from 'react';
 //import ReactDOM from  'react-dom';
 import './dashboard.css';
 import {Col,Row } from 'react-flexbox-grid';
-import { FaMountain, FaHome ,FaHeart,FaUserAlt,FaRegBell, FaCog, FaQuestionCircle, FaParachuteBox} from 'react-icons/fa';
+import { FaMountain, FaHome ,FaHeart,FaUserAlt,FaRegBell, FaCog,FaRegCompass, FaMapMarkerAlt,FaPlane, FaQuestionCircle, FaFly,FaCalendar,FaStar, FaSearch} from 'react-icons/fa';
+import PlaceCard from './components/card';
+import SideBarIcon from './components/navigation'
+import MenuCard from './components/square-icon';
+import HotelCard from './components/hotel-card';
 
 
-class Dashboard extends React.Component {
-      render() {
+function Dashboard () {
         return (
           <div fluid className="app-main">
-              <Col className="sidebar">
 
-                  <div class= 'sidebar-icon'id='symbol'><FaMountain size="25px"/></div>
-                  <div class= 'sidebar-icon'><FaHome size="18px"/></div>
-                  <div class= 'sidebar-icon'><FaHeart size="18px"/></div>
-                  <div class= 'sidebar-icon'><FaUserAlt size="18px"/></div>
-                  <div class= 'sidebar-icon'><FaRegBell size="18px"/></div>
-                  <div class= 'sidebar-icon'><FaCog size="18px"/></div>
-                  <div class= 'sidebar-icon' id='info' ><FaQuestionCircle size="18px"/></div>
-              </Col>
-
-            <Col className="content-column" xs>
-             <Row>
-                <div class="box-header">
-                   <input class='search' type='text' placeholder='Search'/>
-                   <div class='user'>Hi user<img src='http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/10/Whatsapp-DP-2-2.jpg' alt=''/></div>
-                </div>
-             </Row>
-             <Row className='features'>
-                <MenuCard name='Accomodation'/>
-                <MenuCard name='Experience'/>
-                <MenuCard name='Acheivements'/>
-                <MenuCard name='Flight'/>
-             </Row>
-            <div class='place-header'><b>Best</b> Experiences </div>
-             <Row className='places'>
-                < PlaceCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' desc='The GoldenCircle, Iceland' />
-                < PlaceCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' desc='Snorkeling Iceland' />
-                < PlaceCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' desc='Golden Iceland' />
-                < PlaceCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' desc='Golden Iceland' />
-            </Row>
-
-            </Col>
-    </div>
+                  <Col>
+                      <SideBarIcon/>
+                  </Col>
+                  <Col className="content-column" xs>
+                      <Row className="box-header" >
+                          <Col ><input class='search' type='text' placeholder='Search'/> </Col>
+                          <Col ><div class='user'>Hello,<b> User </b><img src='http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/10/Whatsapp-DP-2-2.jpg' alt=''/></div></Col>
+                      </Row>
+                      <Row className='features'>
+                          <MenuCard name='Accomodation'><FaHome size="35px" /></MenuCard>
+                          <MenuCard name='Experience'><FaFly  size="35px" /></MenuCard>
+                          <MenuCard name='Adventures'><FaRegCompass  size="35px"/></MenuCard>
+                          <MenuCard name='Flights'><FaPlane size="35px" /></MenuCard>
+                      </Row>
+                      <div class='place-header'><b>Best</b> Experiences </div>
+                      <Row className='places'>
+                          < PlaceCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' desc='The Golden Circle,' place=' Iceland' days='5-7' distance='20km' />
+                          < PlaceCard img='http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/10/Whatsapp-DP-2-2.jpg' desc='Snorkelling' place='Iceland' days='11'distance='20km'/>
+                          < PlaceCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' desc='The Golden Circle, Iceland' days='5-7' distance='20km'/>
+                          < PlaceCard img='http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/10/Whatsapp-DP-2-2.jpg' desc='Snorkelling' place='Iceland' days='11'distance='20km'/>
+                      </Row>
+                      <div class='place-header'><b>Top</b> Hotels</div>
+                   <Row >
+                        <div class="box-hotel">
+                          <HotelCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' name="The Golden Hotel" desc="place" rating="9.2"/>
+                          <HotelCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' name="Mountain Hotal" desc="place" rating="9.1"/>
+                          <HotelCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' name="Name" desc="place" rating="9"/>
+                        </div>
+                  </Row>
+                </Col>
+         </div>
         );
-      }
-    }
 
-    function MenuCard(props){
-      return(<div class='card-container'>
-        <div class='card'>
-        </div>
-         {props.name}
-      </div>
-    )}
-
-
-    function PlaceCard(props){
-      return (
-        <div class='place-card'>
-           <img src={props.img} alt=' ' / >
-           <div class='place-desc'>{props.desc} </div>
-        </div>
-      )
     }
 
     export default Dashboard;

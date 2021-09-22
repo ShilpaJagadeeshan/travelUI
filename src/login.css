@@ -20,6 +20,11 @@
   padding-left: 60px;
   padding-bottom: 20px;
 }
+.input-error{
+  font-size: 13px;
+  color:red;
+  font-weight: bold;
+}
 
 .login{
 margin-top: 30px;

@@ -2,19 +2,26 @@ import React, {useState} from 'react';
 import ReactDOM from  'react-dom';
 import '../dashboard.css';
 import {FaStar } from 'react-icons/fa';
+import data from '../data/hotel'
 
     function HotelCard(props){
       return(
-        <div class='hotel-cards'>
-        <img src={props.img} />
+        <div >
+        {data.map(hotel => {
+          return (
+<div class='hotel-cards'>
+        <img src={hotel.img} />
         <div class='rating' >
           <FaStar color='yellow'/>
-          {props.rating}
+          {hotel.rating}
         </div>
         <div class='hotel-desc'>
-          <b>{props.name}</b>
-          <p>{props.desc}</p>
+          <b>{hotel.name}</b>
+          <p>{hotel.desc}</p>
         </div>
+        </div>
+      )
+    })}
         </div>
     )}
 

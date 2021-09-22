@@ -7,9 +7,11 @@ import PlaceCard from './components/card';
 import SideBarIcon from './components/navigation'
 import MenuCard from './components/square-icon';
 import HotelCard from './components/hotel-card';
-
+import App from './App'
 
 function Dashboard () {
+        var img1 = "https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg" ;
+        var img2 = "http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/10/Whatsapp-DP-2-2.jpg";
         return (
           <div fluid className="app-main">
 
@@ -19,7 +21,7 @@ function Dashboard () {
                   <Col className="content-column" xs>
                       <Row className="box-header" >
                           <Col ><input class='search' type='text' placeholder='Search'/> </Col>
-                          <Col ><div class='user'>Hello,<b> User </b><img src='http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/10/Whatsapp-DP-2-2.jpg' alt=''/></div></Col>
+                          <Col ><div class='user'>Hello,<b> User </b><img src={img1} alt=''/></div></Col>
                       </Row>
                       <Row className='features'>
                           <MenuCard name='Accomodation'><FaHome size="35px" /></MenuCard>
@@ -27,19 +29,14 @@ function Dashboard () {
                           <MenuCard name='Adventures'><FaRegCompass  size="35px"/></MenuCard>
                           <MenuCard name='Flights'><FaPlane size="35px" /></MenuCard>
                       </Row>
-                      <div class='place-header'><b>Best</b> Experiences </div>
+                      <div class='place-header'><b>Best</b> Experiences </div><nav>< a href='./App'>See All</a></nav>
                       <Row className='places'>
-                          < PlaceCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' desc='The Golden Circle,' place=' Iceland' days='5-7' distance='20km' />
-                          < PlaceCard img='http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/10/Whatsapp-DP-2-2.jpg' desc='Snorkelling' place='Iceland' days='11'distance='20km'/>
-                          < PlaceCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' desc='The Golden Circle, Iceland' days='5-7' distance='20km'/>
-                          < PlaceCard img='http://www.goodmorningimagesdownload.com/wp-content/uploads/2019/10/Whatsapp-DP-2-2.jpg' desc='Snorkelling' place='Iceland' days='11'distance='20km'/>
+                          < PlaceCard/>
                       </Row>
                       <div class='place-header'><b>Top</b> Hotels</div>
                    <Row >
                         <div class="box-hotel">
-                          <HotelCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' name="The Golden Hotel" desc="place" rating="9.2"/>
-                          <HotelCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' name="Mountain Hotal" desc="place" rating="9.1"/>
-                          <HotelCard img='https://i.kinja-img.com/gawker-media/image/upload/t_original/syrtae5pltpzbkcnkxvh.jpg' name="Name" desc="place" rating="9"/>
+                          <HotelCard />
                         </div>
                   </Row>
                 </Col>

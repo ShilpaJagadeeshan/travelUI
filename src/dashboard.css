@@ -70,6 +70,7 @@
 .features{
   display: flex;
   padding-left: 50px;
+  padding-bottom: 30px;
 }
 
  .card {
@@ -78,27 +79,29 @@
   background-color: #fee6e7;
   border-radius: 10px;
   margin-left: 20px;
+  margin-right: 20px;
   align-items: center;
+  line-height: 3;
 }
 
 .card-icon{
   padding-top: 20px;
   color: #ff6e6e;
-
+  padding-left: 20px;
+  padding-right: 30px;
 }
 
 .card-container {
 font-size: 15px;
-height: 120px;
-width: 120px;
 text-align: center;
 line-height: 2;
+display: inline-flex;
 }
 
 .places{
   padding-left: 60px;
   color:white;
-  padding-right: 70px
+  padding-right: 70px;
 }
 
 .place{
@@ -109,7 +112,7 @@ line-height: 2;
   width:260px;
   height:300px;
   padding-top: 30px;
-  padding-right: 70px;
+  padding-right: 40px;
   text-align: left;
   display: flex;
 }
@@ -125,6 +128,13 @@ line-height: 2;
   padding: 40px 50px 0px 60px;
   font-size: 25px;
 
+}
+
+.place-header a{
+  font-size: 16px;
+  color: #ff6e6e;
+  float:right;
+  text-decoration: none;
 }
 
  .place-card .place-desc{

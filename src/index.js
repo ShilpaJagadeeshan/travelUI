@@ -5,14 +5,20 @@ import Dashboard from './dashboard';
 //import { createBrowserHistory } from 'history';
 import LoginForm from './login'
 import reportWebVitals from './reportWebVitals';
-//import App from './App';
+import App from './App';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Experience from './experience'
+import Hotels from './hotel'
 
 ReactDOM.render(
 <Router>
    <Switch>
+    <Route path='/experience/booking' component={App}/>
+    <Route path='/hotel' component={Hotels}/>
+    <Route path='/experience' component={Experience}/>
     <Route path='/dashboard' component={Dashboard}/>
     <Route path='/' component={LoginForm} />
+
   </Switch>
   </Router>,
   document.getElementById('root')
